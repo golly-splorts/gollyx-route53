@@ -754,3 +754,12 @@ resource "aws_route53_record" "golly456_life_acm_cloud_pseudo" {
   ttl     = 1799
   records = ["_b115f5fbfbdeb2f5159b1d5246009e3c.bbfvkzsszw.acm-validations.aws."]
 }
+
+resource "aws_route53_record" "golly456_life_acm_cloud_vii" {
+  zone_id         = local.golly456_life_zone_id
+  name            = "_188c99a2383c6cfb5df9eb5cfd7294eb.cloud.vii.golly456.life"
+  type            = "CNAME"
+  ttl             = 1799
+  records         = ["_02661c6a65a9659c66d7f1b08fbb45ef.jkddzztszm.acm-validations.aws"]
+  allow_overwrite = true
+}
