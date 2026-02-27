@@ -763,3 +763,11 @@ resource "aws_route53_record" "golly456_life_acm_cloud_vii" {
   records         = ["_02661c6a65a9659c66d7f1b08fbb45ef.jkddzztszm.acm-validations.aws"]
   allow_overwrite = true
 }
+
+resource "aws_route53_record" "golly456_life_caa_cloud_vii" {
+  zone_id = local.golly456_life_zone_id
+  name    = "cloud.vii.golly456.life"
+  type    = "CAA"
+  ttl     = 1799
+  records = ["0 issue \"amazon.com\""]
+}
