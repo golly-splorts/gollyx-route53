@@ -588,6 +588,22 @@ resource "aws_route53_record" "golly_life_caa_maps" {
   records = ["0 issue \"amazon.com\""]
 }
 
+resource "aws_route53_record" "golly_life_caa_cloud_vii" {
+  zone_id = local.golly_life_zone_id
+  name    = "cloud.vii.golly.life"
+  type    = "CAA"
+  ttl     = 1799
+  records = ["0 issue \"amazon.com\""]
+}
+
+resource "aws_route53_record" "golly_life_caa_cloud_star_vii" {
+  zone_id = local.golly_life_zone_id
+  name    = "cloud.star.vii.golly.life"
+  type    = "CAA"
+  ttl     = 1799
+  records = ["0 issue \"amazon.com\""]
+}
+
 # ---------------------------------------------------------------------------
 # ACM DNS validation CNAME records
 # ---------------------------------------------------------------------------
