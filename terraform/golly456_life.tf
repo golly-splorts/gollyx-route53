@@ -771,3 +771,16 @@ resource "aws_route53_record" "golly456_life_caa_cloud_vii" {
   ttl     = 1799
   records = ["0 issue \"amazon.com\""]
 }
+
+resource "aws_api_gateway_domain_name" "golly456_life_apigw_cloud_vii" {
+  provider        = aws.api_region
+  domain_name     = "cloud.vii.golly456.life"
+  certificate_arn = "arn:aws:acm:us-east-1:699103353083:certificate/06552d5f-0653-4060-b6aa-d2d5e1173b35"
+}
+
+resource "aws_api_gateway_base_path_mapping" "golly456_life_apigw_cloud_vii" {
+  provider    = aws.api_region
+  api_id      = "77p2auwdpk"
+  stage_name  = "integration"
+  domain_name = aws_api_gateway_domain_name.golly456_life_apigw_cloud_vii.domain_name
+}
