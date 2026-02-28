@@ -784,3 +784,15 @@ resource "aws_api_gateway_base_path_mapping" "golly456_life_apigw_cloud_vii" {
   stage_name  = "integration"
   domain_name = aws_api_gateway_domain_name.golly456_life_apigw_cloud_vii.domain_name
 }
+
+resource "aws_route53_record" "golly456_life_cloud_vii" {
+  zone_id         = local.golly456_life_zone_id
+  name            = "cloud.vii.golly456.life"
+  type            = "A"
+  allow_overwrite = true
+  alias {
+    name                   = "d24yp87nw6dfgm.cloudfront.net"
+    zone_id                = "Z2FDTNDATAQYW2"
+    evaluate_target_health = false
+  }
+}
