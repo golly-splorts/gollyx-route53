@@ -796,3 +796,20 @@ resource "aws_route53_record" "golly456_life_cloud_vii" {
     evaluate_target_health = false
   }
 }
+
+resource "aws_route53_record" "golly456_life_caa_cloud_star_vii" {
+  zone_id = local.golly456_life_zone_id
+  name    = "cloud.star.vii.golly456.life"
+  type    = "CAA"
+  ttl     = 1799
+  records = ["0 issue \"amazon.com\""]
+}
+
+resource "aws_route53_record" "golly456_life_acm_cloud_star_vii" {
+  zone_id         = local.golly456_life_zone_id
+  name            = "_c64ba69495ca9e15b441822c0c2f4144.cloud.star.vii.golly456.life"
+  type            = "CNAME"
+  ttl             = 1799
+  records         = ["_24f6230676cd9b29691420810a7d598c.jkddzztszm.acm-validations.aws"]
+  allow_overwrite = true
+}
