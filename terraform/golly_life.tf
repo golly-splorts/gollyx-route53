@@ -815,3 +815,15 @@ resource "aws_api_gateway_base_path_mapping" "golly_life_apigw_cloud_vii" {
   stage_name  = "prod"
   domain_name = aws_api_gateway_domain_name.golly_life_apigw_cloud_vii.domain_name
 }
+
+resource "aws_route53_record" "golly_life_cloud_vii" {
+  zone_id         = local.golly_life_zone_id
+  name            = "cloud.vii.golly.life"
+  type            = "A"
+  allow_overwrite = true
+  alias {
+    name                   = "d1asln4c82746m.cloudfront.net"
+    zone_id                = "Z2FDTNDATAQYW2"
+    evaluate_target_health = false
+  }
+}
