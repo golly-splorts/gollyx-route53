@@ -855,3 +855,20 @@ resource "aws_route53_record" "golly456_life_acm_cloud_star_viii" {
   records         = ["_53a02050ba43312270e1ba47e18d7c05.jkddzztszm.acm-validations.aws"]
   allow_overwrite = true
 }
+
+resource "aws_route53_record" "golly456_life_caa_cloud_viii" {
+  zone_id = local.golly456_life_zone_id
+  name    = "cloud.viii.golly456.life"
+  type    = "CAA"
+  ttl     = 1799
+  records = ["0 issue \"amazon.com\""]
+}
+
+resource "aws_route53_record" "golly456_life_acm_cloud_viii" {
+  zone_id         = local.golly456_life_zone_id
+  name            = "_5e285daf4d557d9fbc618fd228ac06fa.cloud.viii.golly456.life"
+  type            = "CNAME"
+  ttl             = 1799
+  records         = ["_bb38c22c1bf6554b0bd822ba993c8a7c.jkddzztszm.acm-validations.aws"]
+  allow_overwrite = true
+}
