@@ -838,3 +838,20 @@ resource "aws_route53_record" "golly456_life_cloud_star_vii" {
     evaluate_target_health = false
   }
 }
+
+resource "aws_route53_record" "golly456_life_caa_cloud_star_viii" {
+  zone_id = local.golly456_life_zone_id
+  name    = "cloud.star.viii.golly456.life"
+  type    = "CAA"
+  ttl     = 1799
+  records = ["0 issue \"amazon.com\""]
+}
+
+resource "aws_route53_record" "golly456_life_acm_cloud_star_viii" {
+  zone_id         = local.golly456_life_zone_id
+  name            = "_a854d71330bd2d17d30df8859f491104.cloud.star.viii.golly456.life"
+  type            = "CNAME"
+  ttl             = 1799
+  records         = ["_53a02050ba43312270e1ba47e18d7c05.jkddzztszm.acm-validations.aws"]
+  allow_overwrite = true
+}
