@@ -897,3 +897,16 @@ resource "aws_route53_record" "golly456_life_cloud_star_viii" {
     evaluate_target_health = false
   }
 }
+
+resource "aws_api_gateway_domain_name" "golly456_life_apigw_cloud_viii" {
+  provider        = aws.api_region
+  domain_name     = "cloud.viii.golly456.life"
+  certificate_arn = "arn:aws:acm:us-east-1:699103353083:certificate/fad04529-2cb2-459d-a875-7ebe469f72ca"
+}
+
+resource "aws_api_gateway_base_path_mapping" "golly456_life_apigw_cloud_viii" {
+  provider    = aws.api_region
+  api_id      = "038m7zfpi9"
+  stage_name  = "integration"
+  domain_name = aws_api_gateway_domain_name.golly456_life_apigw_cloud_viii.domain_name
+}
