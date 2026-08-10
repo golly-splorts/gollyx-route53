@@ -861,3 +861,16 @@ resource "aws_route53_record" "golly_life_acm_cloud_viii" {
   records         = ["_b0e5fb481f92d71a3abc158a354b87d9.jkddzztszm.acm-validations.aws"]
   allow_overwrite = true
 }
+
+resource "aws_api_gateway_domain_name" "golly_life_apigw_cloud_star_viii" {
+  provider        = aws.api_region
+  domain_name     = "cloud.star.viii.golly.life"
+  certificate_arn = "arn:aws:acm:us-east-1:699103353083:certificate/3eb2e52d-8a0a-4efd-98c2-4b8336dc1483"
+}
+
+resource "aws_api_gateway_base_path_mapping" "golly_life_apigw_cloud_star_viii" {
+  provider    = aws.api_region
+  api_id      = "olbh6x7r21"
+  stage_name  = "prod"
+  domain_name = aws_api_gateway_domain_name.golly_life_apigw_cloud_star_viii.domain_name
+}
